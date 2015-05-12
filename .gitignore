@@ -1,0 +1,13 @@
+# Grails
+
+logs/
+prodDb.h2.db
+prodDb.lock.db
+
+# Gradle
+
+build/
+gradle*
+*.gradle
+.gradle/
+.gradletasknamecache
