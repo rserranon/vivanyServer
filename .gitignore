@@ -8,6 +8,5 @@ prodDb.lock.db
 
 build/
 gradle*
-*.gradle
 .gradle/
 .gradletasknamecache
