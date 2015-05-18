@@ -14,7 +14,7 @@ class DiseaseController {
 	def diseasesList = {
 	    render autoCompleteService.diseasesList(params) as JSON
 	}
-
+	
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
         respond Disease.list(params), model:[diseaseCount: Disease.count()]
