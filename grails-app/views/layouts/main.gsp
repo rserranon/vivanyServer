@@ -7,8 +7,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <asset:stylesheet src="application.css"/>
         <asset:javascript src="application.js"/>
-		<asset:javascript src="jquery-ui-1.11.4.custom/jquery-ui.css"/>
+		<asset:stylesheet src="jquery-ui-1.11.4.custom/jquery-ui.css"/>
 		<asset:javascript src="jquery-ui-1.11.4.custom/jquery-ui.js"/>
+		<asset:javascript src="autocomplete.js"/>
 
         <g:layoutHead/>
     </head>

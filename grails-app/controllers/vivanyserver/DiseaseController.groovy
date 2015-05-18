@@ -3,11 +3,18 @@ package vivanyserver
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
 
+import grails.converters.JSON
+
 @Transactional(readOnly = true)
 class DiseaseController {
+	def autoCompleteService
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
-
+	
+	def diseasesList = {
+	    render autoCompleteService.diseasesList(params) as JSON
+	}
+	
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
         respond Disease.list(params), model:[diseaseCount: Disease.count()]
