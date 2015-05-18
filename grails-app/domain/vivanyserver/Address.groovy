@@ -12,6 +12,6 @@ class Address {
     }
 	
 	String toString() {
-		street + " " + extNumer + " " + zipCode
+		street + " " + extNumber + " " + zipCode
 	}
 }
