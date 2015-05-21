@@ -5,6 +5,7 @@ class Entry {
 	Date 			entryDate
 	String 			description
 	Person  		doctor
+	HealthProvider	heldAt
 	
 	static 			hasMany = [personsInvolved:Person, images:DigitalObject]
 	
@@ -13,13 +14,14 @@ class Entry {
  // HealthProvider 	heldAt    TOBE Implemented when we can re-create DB
 
     static constraints = {
-		doctor blank:true
+		doctor 				blank:true
+		heldAt				blank:true
 		entryDate			widget:'datePicker'
-		summary				widget:'textarea'
-		description			widget:'textarea'
+		doctor				nullable:true
+		summary				widget:'textarea', size: 5..200
+		description			type: "text", widget:'textarea', size: 5..500
 		personsInvolved 	nullable:true
 		nextEntry 			nullable:true
-		doctor				nullable:true
 		images				nullable:true
     }
 	
