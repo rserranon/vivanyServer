@@ -7,7 +7,8 @@ class Person {
 	Address livesAt
 //	static hasOne = [livesAt:Address]
 	
-	static hasMany = [contacts:Person]
+	static mappedBy = [entries:'patient']
+	static hasMany = [contacts:Person, entries:Entry]
 
     static constraints = {
 		name 		blank:false
