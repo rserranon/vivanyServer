@@ -1,0 +1,36 @@
+@color: #e74c3c;
+	.tl-post_date{
+		background-color: @color;
+	}						
+			.tl-post_title{
+				color: @color;
+			}
+			.tl-post_tags{
+				& span{
+					color: @color;
+				}
+			}				
+.timeline_post:nth-of-type(2n-1){ 				
+	& .tl-post_date {					
+		&:before{		
+			border-right-color: @color;
+		}
+	}					
+}		
+.timeline_post:nth-of-type(2n){
+	& .tl-post_date {
+		&:before{		
+			border-left-color: @color;
+		}			
+	}
+}
+
+@media (max-width:800px){
+.timeline_post:nth-of-type(2n){
+	& .tl-post_date {
+		&:before{		
+			border-right-color: @color;
+		}			
+	}
+}
+} 
