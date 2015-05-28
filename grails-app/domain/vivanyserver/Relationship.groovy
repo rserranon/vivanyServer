@@ -7,7 +7,9 @@ class Relationship {
 	static belongsTo = [relatedTo1: Person,
 						relatedTo2: Person]
     static constraints = {
-		relationship unique:true
+		relatedTo1   blank: false
+		relationship unique: false
+		relatedTo2   blank: false
     }
 	
     @Override public String toString() {
