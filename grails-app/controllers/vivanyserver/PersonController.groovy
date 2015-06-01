@@ -8,6 +8,10 @@ class PersonController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
+    def timeline(Person person) {
+        respond person
+    }
+
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
         respond Person.list(params), model:[personCount: Person.count()]

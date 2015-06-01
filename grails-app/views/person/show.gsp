@@ -24,6 +24,7 @@
             <g:form resource="${person}" method="DELETE">
                 <fieldset class="buttons">
                     <g:link class="edit" action="edit" resource="${person}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
+					<g:link class="timeline" action="timeline" resource="${person}"><g:message code="default.button.timeline.label" default="Timeline" /></g:link>
                     <input class="delete" type="submit" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
                 </fieldset>
             </g:form>

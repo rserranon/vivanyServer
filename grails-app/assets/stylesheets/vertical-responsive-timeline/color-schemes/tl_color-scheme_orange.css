@@ -1,0 +1,20 @@
+.tl-post_date {
+  background-color: #f39c12;
+}
+.tl-post_title {
+  color: #f39c12;
+}
+.tl-post_tags span {
+  color: #f39c12;
+}
+.timeline_post:nth-of-type(2n-1) .tl-post_date:before {
+  border-right-color: #f39c12;
+}
+.timeline_post:nth-of-type(2n) .tl-post_date:before {
+  border-left-color: #f39c12;
+}
+@media (max-width: 800px) {
+  .timeline_post:nth-of-type(2n) .tl-post_date:before {
+    border-right-color: #f39c12;
+  }
+}

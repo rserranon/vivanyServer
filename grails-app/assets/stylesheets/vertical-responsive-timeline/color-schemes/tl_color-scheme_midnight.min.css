@@ -1,0 +1,6 @@
+.tl-post_date{background-color:#2c3e50}
+.tl-post_title{color:#2c3e50}
+.tl-post_tags span{color:#2c3e50}
+.timeline_post:nth-of-type(2n-1) .tl-post_date:before{border-right-color:#2c3e50}
+.timeline_post:nth-of-type(2n) .tl-post_date:before{border-left-color:#2c3e50}
+@media (max-width:800px){.timeline_post:nth-of-type(2n) .tl-post_date:before{border-right-color:#2c3e50}}
