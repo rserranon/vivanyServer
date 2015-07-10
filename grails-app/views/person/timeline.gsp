@@ -2,15 +2,15 @@
 <html>
     <head>
         <meta name="layout" content="main">
-        
+
 		<asset:stylesheet src="vertical-responsive-timeline/style.min.css"/>
         <asset:javascript src="vertical-responsive-timeline/assembled.min.js"/>
-		
+
         <g:set var="entityName" value="${message(code: 'person.label', default: 'Person')}" />
         <title><g:message code="default.list.label" args="[entityName]" /></title>
 	    <meta charset="utf-8">
 	    <meta name="description" content="vertical responsive timeline based on html5 and css3">
-	    <meta name="viewport" content="width=device-width, initial-scale=1">									
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
 		<!--[if IE]>
 			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 			<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
@@ -18,14 +18,14 @@
 		<link href='http://fonts.googleapis.com/css?family=Roboto:400,300&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 
-		<link rel="stylesheet" href="css/style.min.css">		
-		<link class="js-color-scheme" rel="stylesheet">	
+		<link rel="stylesheet" href="css/style.min.css">
+		<link class="js-color-scheme" rel="stylesheet">
 		<!--[if lt IE 9]>
 	    	<link rel="stylesheet" href="css/ie-out.min.css">
-		<![endif]-->	
+		<![endif]-->
     </head>
     <body>
-		
+
 		<section class="main" role="main">
 			<section class="example">
 				<div class="container">
@@ -41,40 +41,40 @@
 						<span class="color alizarin js-color" data-color="alizarin">Alizarin</span>
 						<span class="color wisteria js-color" data-color="wisteria">Wisteria</span>
 					</div>
-				</div>	
+				</div>
 				<section class="timeline">
-					<div class="timeline_milestone">	
+					<div class="timeline_milestone">
 						<g:set var="year" value="${person?.entries[1]?.entryDate?.year}" />
 						<h2 class="milestone_title"><g:formatDate format="yyyy" date="${person?.entries[1]?.entryDate}"/></h2>
 						<p class="milestone_meta">Paciente: ${person}</p>
-					</div>					
+					</div>
 					<g:each in="${person.entries}">
 						<article class="timeline_post">
 							<h1 class="tl-post_date"><g:formatDate format="yyyy-MM-dd" date="${it.entryDate}"/></h1>
 							<div class="tl-post_card">
 								<header class="tl-post_header">
 									<h2 class="tl-post_title">Visita: </h2>
-									<p class="tl-post_tags">Médicos:<span>${it.doctor}</span></p>					
+									<p class="tl-post_tags">Médicos:<span>${it.doctor}</span></p>
 									<p class="tl-post_tags">Lugar:<span>${it.heldAt}</span></p>
-									<p class="tl-post_tags">Diagnóstico:<span>Influenza</span></p>
-									<br></br>								
-									<p class="tl-post_meta">${it.summary}</p>			
+									<p class="tl-post_tags">Diagnóstico:<span>${it.diagnoseName}</span></p>
+									<br></br>
+									<p class="tl-post_meta">${it.summary}</p>
 								</header>
 								<div class="tl-post_content">
 									<div class="content_wrap">
 										<img class="tl-post_image right js-lazy" data-src="http://www.radgray.com/wp-content/uploads/2011/12/Sarcoidosis-rx.jpg" src="http://www.radgray.com/wp-content/uploads/2011/12/Sarcoidosis-rx.jpg" alt="responsive web design">
-										<noscript><img class="tl-post_image right" src="img/rwd.png" alt="responsive web design"></noscript>						
+										<noscript><img class="tl-post_image right" src="img/rwd.png" alt="responsive web design"></noscript>
 										<p class="tl-post_text">${it.description}</p>
 									</div>
 								</div>
-								<div class="tl-post_footer">							
+								<div class="tl-post_footer">
 									<a class="tl-post_readmore" rel="nofollow" href="http://en.wikipedia.org/wiki/Responsive_web_design" title="Check the article at wikipedia">Editar...</a>
 								</div>
 							</div>
 						</article>
 					</g:each>
 			</section>
-		</section>	
+		</section>
 		<!--[if lt IE 9]>
 			<div class="browser-msg">
 				<h2 class="browser-msg__title">Houston we've had a problem</h2>
@@ -124,9 +124,9 @@
 				</ul>
 				<p class="browser-msg__info">Thank you :)</p>
 			</div>
-		<![endif]-->   	
+		<![endif]-->
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/jquery-1.10.2.min.js"><\/script>')</script>
-        <script src="js/assembled.min.js"></script> 
+        <script src="js/assembled.min.js"></script>
     </body>
 </html>
