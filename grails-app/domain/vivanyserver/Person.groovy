@@ -7,9 +7,14 @@ class Person {
 	Address livesAt
 
 //	static hasOne = [livesAt:Address]
-	
-	static mappedBy = [entries:'patient', hasRelationships:'relatedTo1', isRelatedTo: 'relatedTo2']
-	static hasMany = [contacts:Person, entries:Entry, hasRelationships: Relationship, isRelatedTo: Relationship]
+
+	static mappedBy = [entries:'patient',
+										 hasRelationships:'relatedTo1',
+										 isRelatedTo: 'relatedTo2']
+	static hasMany = [contacts:Person,
+										entries:Entry,
+										hasRelationships: Relationship,
+										isRelatedTo: Relationship]
 
     static constraints = {
 		name 		blank:false
@@ -17,7 +22,7 @@ class Person {
 		type 		blank:false
 		livesAt 	nullable: true
     }
-	
+
 	String toString() {
 		name + " " + lastName
 	}

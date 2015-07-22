@@ -9,7 +9,30 @@ class PersonController {
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
     def timeline(Person person) {
-        respond person
+      def entryList = []
+
+      def classList = []
+      classList.add(Diagnose.name)
+      classList.add(Treatment.name)
+      classList.add(Procedure.name)
+      classList.add(Study.name)
+      println "Clases: "+classList
+
+      entryList = Entry.createCriteria().list() {
+                eq('patient', person)
+          and {
+                'in'("class", classList)
+                // eq('class', Diagnose.name) // compare clas column to Diagnose.name
+          }
+      }
+
+      println "lista " + person.entries
+
+      entryList.each {
+        println it.class
+      }
+
+     respond person, model: [entryList: entryList]
     }
 
     def index(Integer max) {

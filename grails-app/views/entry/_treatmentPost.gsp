@@ -2,10 +2,14 @@
   <h1 class="tl-post_date"><g:formatDate format="yyyy-MM-dd" date="${it.entryDate}"/></h1>
   <div class="tl-post_card">
     <header class="tl-post_header">
-      <h2 class="tl-post_title">Diagnóstico</h2>
-      <p class="tl-post_tags">Médicos: <span>${it.doctor}</span></p>
-      <p class="tl-post_tags">Lugar: <span>${it.heldAt}</span></p>
-      <p class="tl-post_tags">Diagnóstico: <span>${it.diagnoseName}</span></p>
+      <h2 class="tl-post_title">Tratamiento</h2>
+      <p class="tl-post_tags">Médicos:<span>${it.doctor}</span></p>
+      <p class="tl-post_tags">Lugar:<span>${it.heldAt}</span></p>
+      <p class="tl-post_tags">Substancia:<span>${it.substance}</span></p>
+      <p class="tl-post_tags">Nombre Comercial:<span>${it.commercialName}</span></p>
+      <p class="tl-post_tags">Dosis:<span>${it.dose}</span></p>
+      <p class="tl-post_tags">Frecuencia:<span>${it.frecuency}</span></p>
+
       <br></br>
       <p class="tl-post_meta">${it.summary}</p>
     </header>
