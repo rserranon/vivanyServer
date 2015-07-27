@@ -26,6 +26,8 @@ apply plugin: 'eclipse'
 apply plugin: 'idea'
 apply plugin: "org.grails.grails-web"
 apply plugin: "org.grails.grails-gsp"
+// To resport dependencies
+apply plugin: 'project-report'
 
 ext {
     grailsVersion = project.grailsVersion
@@ -74,6 +76,8 @@ dependencies {
 
 	// Added by RSN for MySQL
 	runtime 'mysql:mysql-connector-java:5.1.29'
+	// Added to fix fields plugin
+  runtime 'org.grails.plugins:fields:2.0.3'
 
 }
 
