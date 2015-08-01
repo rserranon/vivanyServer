@@ -84,3 +84,10 @@ dependencies {
 task wrapper(type: Wrapper) {
     gradleVersion = gradleWrapperVersion
 }
+
+bootRun {
+    // If System.console() return non null instance,
+    // we force ANSI color support with 'always',
+    // otherwise use default 'detect'.
+    jvmArgs = ['-Dspring.output.ansi.enabled=' + (System.console() ? 'always' : 'detect')]
+}

@@ -8,6 +8,8 @@ class PersonController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
+    // def timeLineService
+
     def timeline(Person person) {
       def entryList = []
 
@@ -17,6 +19,8 @@ class PersonController {
       classList.add(Procedure.name)
       classList.add(Study.name)
       println "Clases: "+classList
+
+
 
       entryList = Entry.createCriteria().list() {
                 eq('patient', person)
@@ -31,6 +35,12 @@ class PersonController {
       entryList.each {
         println it.class
       }
+
+    //def listaFinal = []
+    //listaFinal = timeLineService.createTimeline(entryList)
+    //println listaFinal
+
+     def sortedEntries = entryList.sort{[it.entryDate]}
 
      respond person, model: [entryList: entryList]
     }
