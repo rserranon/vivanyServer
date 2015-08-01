@@ -8,6 +8,8 @@ class PersonController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
+    def timeLineService
+
     def timeline(Person person) {
       def entryList = []
 
@@ -31,6 +33,10 @@ class PersonController {
       entryList.each {
         println it.class
       }
+
+    def listaFinal = []
+    listaFinal = timeLineService.createTimeline(entryList)
+    println listaFinal
 
      respond person, model: [entryList: entryList]
     }
