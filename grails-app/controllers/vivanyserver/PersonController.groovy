@@ -18,7 +18,7 @@ class PersonController {
       classList.add(Treatment.name)
       classList.add(Procedure.name)
       classList.add(Study.name)
-      println "Clases: "+classList
+      log.info "Classes: ${classList}"
 
 
 
@@ -30,10 +30,10 @@ class PersonController {
           }
       }
 
-      println "lista " + person.entries
+      log.info  "lista ${person.entries}"
 
       entryList.each {
-        println it.class
+        log.info  "Class: ${it.class}"
       }
 
     //def listaFinal = []
