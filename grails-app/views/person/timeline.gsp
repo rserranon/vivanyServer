@@ -42,17 +42,32 @@
 						<span class="color wisteria js-color" data-color="wisteria">Wisteria</span>
 					</div>
 				</div>
-				<section class="timeline">
-					<div class="timeline_milestone">
-						<g:set var="year" value="${person?.entries[1]?.entryDate?.year}" />
-						<h2 class="milestone_title"><g:formatDate format="yyyy" date="${person?.entries[1]?.entryDate}"/></h2>
-						<p class="milestone_meta">Paciente: ${person}</p>
-					</div>
-					<g:each in="${entryList}"> <!-- not polymorphic yet, but soon-->
-            /entry/${it.getClass().getSimpleName().toLowerCase()}Post
-            <g:render template="/entry/${it.getClass().getSimpleName().toLowerCase()}Post" collection="${it}" var="it"/>
-					</g:each>
-			</section>
+        <!--        timelineList.each {
+                   for ( entry in it ) {
+                      println entry.key
+                      println entry.value
+                   }
+                }
+        -->
+      <section class="timeline">
+        <g:set var="anio" value="0"/>
+        <g:each status="index" in="${entryList}" var="entry">
+          <g:if test="${entry &&  index == 0}">
+            <div class="timeline_milestone">
+                  <h2 class="milestone_title">${entry.entryDate.year+ 1900}</h2>
+                  <p class="milestone_meta">Paciente: ${person}</p>
+            </div>
+          </g:if>
+          <g:elseif test="${index < entryList.size()-1 && entryList[index+1].entryDate.year != entryList[index].entryDate.year}">
+              <div class="timeline_milestone">
+                <h2 class="milestone_title">${entryList[index+1].entryDate.year+ 1900}</h2>
+                <p class="milestone_meta">Paciente: ${person}</p>
+              </div>
+          </g:elseif>
+                <g:else>
+                    <g:render template="/entry/${entry.getClass().getSimpleName().toLowerCase()}Post" collection="${entry}" var="it"/>
+                  </g:else>
+        </g:each>
 		</section>
 		<!--[if lt IE 9]>
 			<div class="browser-msg">
