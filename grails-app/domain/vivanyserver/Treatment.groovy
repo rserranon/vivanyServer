@@ -8,7 +8,4 @@ class Treatment extends Entry  {
 
     static constraints = {
     }
-	String toString() {
-		substance
-	}
 }

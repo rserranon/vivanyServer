@@ -27,6 +27,6 @@ class Entry {
     }
 
 	String toString() {
-		"Visit: " + entryDate
+		"${this.class.simpleName}-${entryDate}"
 	}
 }
