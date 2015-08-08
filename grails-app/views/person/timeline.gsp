@@ -53,20 +53,23 @@
         <g:set var="anio" value="0"/>
         <g:each status="index" in="${entryList}" var="entry">
           <g:if test="${entry &&  index == 0}">
-            <div class="timeline_milestone">
+              <div class="timeline_milestone">
                   <h2 class="milestone_title">${entry.entryDate.year+ 1900}</h2>
                   <p class="milestone_meta">Paciente: ${person}</p>
-            </div>
+                </div>
+                <g:render template="/entry/${entry.getClass().getSimpleName().toLowerCase()}Post" collection="${entry}" var="it"/>
           </g:if>
-          <g:elseif test="${index < entryList.size()-1 && entryList[index+1].entryDate.year != entryList[index].entryDate.year}">
-              <div class="timeline_milestone">
-                <h2 class="milestone_title">${entryList[index+1].entryDate.year+ 1900}</h2>
-                <p class="milestone_meta">Paciente: ${person}</p>
-              </div>
-          </g:elseif>
-                <g:else>
-                    <g:render template="/entry/${entry.getClass().getSimpleName().toLowerCase()}Post" collection="${entry}" var="it"/>
-                  </g:else>
+              <g:elseif test="${index < entryList.size()-1 && entryList[index+1].entryDate.year != entryList[index].entryDate.year}">
+                  <g:render template="/entry/${entry.getClass().getSimpleName().toLowerCase()}Post" collection="${entry}" var="it"/>
+                    <div class="timeline_milestone">
+                        <h2 class="milestone_title">${entryList[index+1].entryDate.year+ 1900}</h2>
+                        <p class="milestone_meta">Paciente: ${person}</p>
+                    </div>
+              </g:elseif>
+                  <g:else>
+                      ${entry.class}
+                      <g:render template="/entry/${entry.getClass().getSimpleName().toLowerCase()}Post" collection="${entry}" var="it"/>
+                    </g:else>
         </g:each>
 		</section>
 		<!--[if lt IE 9]>

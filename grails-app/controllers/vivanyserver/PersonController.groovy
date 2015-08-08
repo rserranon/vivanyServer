@@ -18,6 +18,7 @@ class PersonController {
       classList.add(Treatment.name)
       classList.add(Procedure.name)
       classList.add(Study.name)
+      classList.add(Visit.name)
       log.info "Classes: ${classList}"
 
 
@@ -32,17 +33,13 @@ class PersonController {
 
       log.info  "lista ${person.entries}"
 
-      entryList.each {
-        log.info  "Class: ${it.class}"
+     def orderedEntryList = entryList.sort{it.entryDate}
+
+      orderedEntryList.each {
+        log.info  "orderedEntryList (each): ${it.class.simpleName} - ${it.entryDate}"
       }
 
-    //def listaFinal = []
-    //listaFinal = timeLineService.createTimeline(entryList)
-    //println listaFinal
-
-     def sortedEntries = entryList.sort{[it.entryDate]}
-
-     respond person, model: [entryList: entryList]
+     respond person, model: [entryList: orderedEntryList]
     }
 
     def index(Integer max) {
