@@ -42,13 +42,6 @@
 						<span class="color wisteria js-color" data-color="wisteria">Wisteria</span>
 					</div>
 				</div>
-        <!--        timelineList.each {
-                   for ( entry in it ) {
-                      println entry.key
-                      println entry.value
-                   }
-                }
-        -->
       <section class="timeline">
         <g:set var="anio" value="0"/>
         <g:each status="index" in="${entryList}" var="entry">
