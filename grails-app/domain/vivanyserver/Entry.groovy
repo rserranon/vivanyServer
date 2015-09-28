@@ -1,5 +1,8 @@
 package vivanyserver
 
+import grails.rest.*
+
+@Resource(uri='/api/entry', formats=['json', 'html'])
 class Entry {
 	String 					summary
 	Date 						entryDate
