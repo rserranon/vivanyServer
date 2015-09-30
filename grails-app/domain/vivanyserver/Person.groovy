@@ -1,4 +1,7 @@
 package vivanyserver
+import grails.rest.*
+
+@Resource(uri='/api/person', formats=['json', 'html'])
 
 class Person {
 	String 	name
