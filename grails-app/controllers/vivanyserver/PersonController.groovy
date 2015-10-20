@@ -8,6 +8,23 @@ class PersonController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
+    
+// def doctors() returns a list of ordered doctors
+
+    def doctors() {
+      def doctorsList = []
+
+      doctorsList = Person.createCriteria().list() {
+                eq('type', 'doctor')
+      }
+
+      log.info "doctorsList: ${doctorsList}"
+
+     def orderedDoctorsList = doctorsList.sort{it.name}
+
+     respond orderedDoctorsList
+    }
+
     // def timeLineService
 
     def timeline(Person person) {
